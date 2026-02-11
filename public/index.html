@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DOOM in Browser</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="top">
+          <h1>DOOM (WASM)</h1>
+          <p class="sub">Tip: press <span class="k">F</span> fullscreen, <span class="k">H</span> help</p>
+        </div>
+
+        <div class="row">
+          <label for="wad">IWAD</label>
+          <select id="wad">
+            <option value="freedoom1.wad">freedoom1.wad</option>
+            <option value="freedoom2.wad">freedoom2.wad</option>
+          </select>
+          <button class="primary" id="start" type="button">Play</button>
+          <button id="fullscreen" type="button">Fullscreen</button>
+          <button id="help" type="button">Help</button>
+          <button id="toggleLog" type="button">Log</button>
+          <span class="status" id="status">Choose an IWAD and click Play</span>
+        </div>
+
+        <div class="content">
+          <div class="canvasWrap">
+            <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+          </div>
+
+          <div class="side">
+            <div class="panel" id="helpPanel">
+              <h2>Controls</h2>
+              <div class="keys">
+                <div class="krow"><span><span class="k">Arrow Keys</span></span><span>Move / turn</span></div>
+                <div class="krow"><span><span class="k">Shift</span></span><span>Run</span></div>
+                <div class="krow"><span><span class="k">Ctrl</span></span><span>Fire</span></div>
+                <div class="krow"><span><span class="k">Space</span></span><span>Use / open</span></div>
+                <div class="krow"><span><span class="k">Enter</span></span><span>Confirm</span></div>
+                <div class="krow"><span><span class="k">Esc</span></span><span>Menu</span></div>
+                <div class="krow"><span><span class="k">F</span></span><span>Fullscreen</span></div>
+                <div class="krow"><span><span class="k">H</span></span><span>Toggle help</span></div>
+              </div>
+              <p class="hint" style="margin: 10px 0 0;">Click the game canvas after it starts to focus it.</p>
+            </div>
+
+            <div class="panel" id="logPanel">
+              <h2>Status</h2>
+              <div class="log" id="log"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
